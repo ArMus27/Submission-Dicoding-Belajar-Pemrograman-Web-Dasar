@@ -1,0 +1,284 @@
+/* custom font dari jost dan roboto google */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;1,700&family=Roboto:wght@700&display=swap');
+
+*{
+    box-sizing: border-box; /* agar aside naik keatas*/
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ------------ bagian keseluruhan halaman ------------*/
+body{
+    font-family: 'Jost',sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.kepala{
+    font-family: 'Roboto',sans-serif;
+    text-transform: uppercase;
+}
+
+
+main{
+    padding: 20px;
+    overflow: auto; /* agar aside dan main dianggap ada */
+}
+
+
+h2, h3{
+    color: #153E90;
+}
+
+
+header{
+    display: inline; /* agar nav menempel pada seluruh halaman saat scrolling*/
+}
+
+
+
+/* ------------ bagian navbar ------------*/
+/* mengatur tulisan pada navabar */
+nav a{
+    font-size: 18px;
+    font-weight: 400px;
+    text-decoration: none;
+    color: white;
+}
+
+/* efek pada saat tulisan di hover */
+nav a:hover{
+    font-weight: bolder;
+}
+
+/* bagian navbar jumbotron */
+.jumbotron{
+    font-size: 20px;
+    padding: 60px;
+    /* background-color: #94D3AC; */
+    background-color: #4B778D;
+    text-align: center;
+    color: white;
+}
+
+nav{
+    background-color: #28B5B5;
+    padding: 5px;
+    position: -webkit-sticky;
+    position:  sticky; /*agar nav diam diatas*/
+    top: 0;
+}
+
+/* tampilan navigasi */
+nav li{
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+
+/* menetapkan ukuran pada gambar */
+.featured-image{
+    width: 70%;
+    max-height: 300px;
+    margin: auto;
+    display: block;
+    /* agar object terlihat proporsional */
+
+
+}
+
+figcaption{
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+
+/* memperbesar gambar saat hover */
+.zoom {
+    transition: transform .6s; /* Animation */
+  }
+  
+.zoom:hover {
+    transform: scale(1.1); 
+}
+
+
+
+/* ------------  bagian article ------------*/
+#sejarah,
+#profil,
+#lokasi,
+#wisata  {
+    text-align: justify;
+}
+
+/* menerapkan card style elemen */
+.card{
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); */
+    box-shadow:  0 4px 8px 0 #91C483;
+    border-radius: 20px;
+
+    /* agar konten mudah dibaca */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+
+/* ------------  bagian aside ------------*/
+aside{
+    margin-top: 40px;
+}
+
+.profile img{
+    width: 200px;
+    border-radius: 50%;
+}
+
+table{
+    text-align: left;
+}    
+
+.profile header{
+    text-align: center;
+}
+
+
+
+/* ------------ bagian slideshow gallery------------*/
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .slide_gambar {
+    display: none;
+  }
+  
+  /* navigasi maju mundur gambar gallery */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    user-select: none;
+  }
+  
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+ 
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+  .urutan {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  
+  /* titik_indikator */
+  .titik_indikator {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .titik_indikator:hover {
+    background-color: black;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+.isi_slide{
+    width: 100%;
+    max-height: 400px;
+    object-fit: fill;
+}
+
+
+
+/* ------------  bagian profile ------------*/
+.profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+/* ------------  bagian footer ------------*/
+footer{
+    padding: 7px;
+    color: white;
+    background-color: #28B5B5;
+    text-align: center;
+}
+
+
+
+/* ------------ bagian responsive  ------------*/
+@media screen and (max-width: 1000px) {
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+
+    .isi_slide{
+        height: 200px;
+    }
+
+    .profile{
+        flex-direction: column;
+    }
+
+    section > h2{
+        text-align: center;
+    }
+
+    .img_saya {
+        display: block;
+        margin: auto;
+    }
+
+    footer, nav a {
+        font-size: 13px;
+    }
+
+ }
